@@ -1,0 +1,325 @@
+/* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Body Styling */
+    body {
+        background-color: #e1f5fe;  /* Soft light blue background */
+        color: #333;
+        line-height: 1.6;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Header Styles */
+    header {
+        background: linear-gradient(to right, #83c6eb, #03a9f4);  /* Gradient of blue */
+        color: white;
+        text-align: center;
+        padding: 20px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    header h1 {
+        font-size: 36px;
+        margin: 0;
+        animation: slideInLeft 1.5s ease-out;
+    }
+
+    header p {
+        font-size: 18px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Navigation Styles */
+    .nav-links {
+        background: linear-gradient(to right, #aecddd, #023753);  /* Darker blue gradient */
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #b3e5fc;  /* Lighter blue on hover */
+    }
+
+    /* Footer Styles */
+    footer {
+        background-color: #5cb4e0;  /* Mid-tone blue */
+        padding: 10px 0;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    footer img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        animation: rotate 3s linear infinite;
+    }
+
+    /* Button Styling */
+    .button2 a {
+        background-color: rgb(69, 139, 230);  /* Blue */
+        color: white;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+    }
+
+    .button2 a:hover {
+        background-color: #0288d1;  /* Darker blue on hover */
+    }
+
+    /* Main Container */
+    .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Weather Info Section */
+    .weather-info {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .weather-info h2 {
+        font-size: 2em;
+        color: #2d96c0;  /* Soft blue color */
+        margin-bottom: 20px;
+    }
+
+    .weather-info p {
+        font-size: 1.2em;
+        color: #0277bd;  /* Slightly darker blue for text */
+        margin: 10px 0;
+    }
+
+    /* Weather Stats */
+    .weather-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .weather-stats div {
+        flex: 1;
+    }
+
+    .weather-stats div p {
+        font-size: 1.2em;
+        color: #0288d1;  /* Blue stats color */
+    }
+
+    /* Call-to-Action Section */
+    .cta-section {
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .cta-section h2 {
+        font-size: 2.5em;
+        color: #0288d1;  /* Consistent blue theme */
+        margin-bottom: 20px;
+        animation: slideInLeft 1.5s ease-out;
+/* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Body Styling */
+    body {
+        background-color: #e1f5fe;  /* Soft light blue background */
+        color: #333;
+        line-height: 1.6;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Header Styles */
+    header {
+        background: linear-gradient(to right, #83c6eb, #03a9f4);  /* Gradient of blue */
+        color: white;
+        text-align: center;
+        padding: 20px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    header h1 {
+        font-size: 36px;
+        margin: 0;
+        animation: slideInLeft 1.5s ease-out;
+    }
+
+    header p {
+        font-size: 18px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Navigation Styles */
+    .nav-links {
+        background: linear-gradient(to right, #aecddd, #023753);  /* Darker blue gradient */
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #b3e5fc;  /* Lighter blue on hover */
+    }
+
+    /* Footer Styles */
+    footer {
+        background-color: #5cb4e0;  /* Mid-tone blue */
+        padding: 10px 0;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    footer img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        animation: rotate 3s linear infinite;
+    }
+
+    /* Button Styling */
+    .button2 a {
+        background-color: rgb(69, 139, 230);  /* Blue */
+        color: white;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+    }
+
+    .button2 a:hover {
+        background-color: #0288d1;  /* Darker blue on hover */
+    }
+
+    /* Main Container */
+    .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Weather Info Section */
+    .weather-info {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .weather-info h2 {
+        font-size: 2em;
+        color: #2d96c0;  /* Soft blue color */
+        margin-bottom: 20px;
+    }
+
+    .weather-info p {
+        font-size: 1.2em;
+        color: #0277bd;  /* Slightly darker blue for text */
+        margin: 10px 0;
+    }
+
+    /* Weather Stats */
+    .weather-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .weather-stats div {
+        flex: 1;
+    }
+
+    .weather-stats div p {
+        font-size: 1.2em;
+        color: #0288d1;  /* Blue stats color */
+    }
+
+    /* Call-to-Action Section */
+    .cta-section {
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .cta-section h2 {
+        font-size: 2.5em;
+        color: #0288d1;  /* Consistent blue theme */
+        margin-bottom: 20px;
+        animation: slideInLeft 1.5s ease-out;
+    }
+
+    .cta-button a {
+        background-color: #0288d1;  /* Soft blue color */
+        color: white;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+    .cta-button a:hover {
+        background-color: #0277bd;  /* Slightly darker blue */
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
