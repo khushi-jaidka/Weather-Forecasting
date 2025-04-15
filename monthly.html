@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Monthly Weather Forecast</title>
+</head>
+<style>
+    /* Monthly Forecast Styles */
+.monthly-forecast .container {
+    margin-top: 40px;
+}
+
+.monthly-forecast .forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+}
+
+.monthly-forecast .day {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.monthly-forecast .day h3 {
+    font-size: 18px;
+}
+
+.monthly-forecast .day p {
+    font-size: 16px;
+}
+
+/* Button styling for "Back" button */
+button {
+    background-color: #0099cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #007bb5;
+}
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 20px;
+}
+
+button {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #575757;
+}
+
+/* Flex container for the card layout */
+.song {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 16rem;
+    height: 350px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.card .box a {
+    text-decoration: none;
+    color: white;
+    background-color: #1e90ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.card .box a:hover {
+    background-color: #575757;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .song {
+        justify-content: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+/* General Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Header Styling */
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+}
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header button {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.header button a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.header button:hover {
+    background-color: #ddd;
+}
+
+/* Main Container */
+.container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Month Header */
+.container h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Forecast Grid */
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Day Box Styling */
+.day {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.day:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.day h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.day p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.day p:nth-child(2) {
+    font-weight: bold;
+}
+
+/* Icons for Weather */
+.day p:nth-child(1) {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+/* Day Styling for Weather Types */
+.sunny {
+    color: #ff8c00;
+}
+
+.cloudy {
+    color: #bbb;
+}
+
+.partly-cloudy {
+    color: #f1c40f;
+}
+
+/* Link Styling for Visit Site */
+.day a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.day a:hover {
+    background-color: #0056b3;
+}
+
+/* Global Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Header and Button Styles */
+button {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Main Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Section */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Timestamp Styling */
+.timestamp {
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Weather Row Styles */
+.weather-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Time Section */
+.weather-row .time {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    width: 10%;
+}
+
+/* Icon Section */
+.weather-row .icon {
+    font-size: 2.5rem;
+    color: #ff8c00;
+    width: 15%;
+}
+
+/* Details Section */
+.weather-row .details {
+    font-size: 1rem;
+    color: #333;
+    width: 35%;
+}
+
+.weather-row .details span {
+    display: block;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Weather Type (Sunny, Clear) Styling */
+.weather-row .details span {
+    font-weight: 400;
+}
+
+/* Icon Adjustment for Weather Conditions */
+.weather-row .icon i {
+    color: #f39c12;
+}
+
+/* Weather Row with Clouds */
+.weather-row .icon i.fa-cloud {
+    color: #95a5a6;
+}
+
+/* Adding media query for responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .weather-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .weather-row .time,
+    .weather-row .icon,
+    .weather-row .details {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .weather-row .icon {
+        text-align: center;
+        font-size: 3rem;
+    }
+}
+
+</style>
+<body>
+    <header class="header">
+        <h1>Monthly Weather Forecast</h1>
+        <button><a href="today.html">BACK</a></button>
+    </header>
+    <main class="container">
+        <h2>MARCH 2025</h2>
+        <div class="forecast-grid">
+            <div class="day">
+                <h3>March 1</h3>
+                <p>🌞 Sunny</p>
+                <p>25°C / 13°C</p>
+            </div>
+            <div class="day">
+                <h3>March 2</h3>
+                <p>⛅ Partly Cloudy</p>
+                <p>26°C / 14°C</p>
+            </div>
+            <div class="day">
+                <h3>March 3</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 4</h3>
+                <p>🌞 Cloudy</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 5</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 6</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 7</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 8</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 9</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 10</h3>
+                <p>🌞 Cloudy</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 11</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 12</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 13</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 14</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 15</h3>
+                <p>⛅ Cloudy</p>
+                <p>22°C / 14°C</p>
+            </div>
+            <div class="day">
+                <h3>March 16</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 17</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 18</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 19</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 20</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 21</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 22</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 23</h3>
+                <p>⛅ Cloudy</p>
+                <p>21°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 24</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 25</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 26</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 27</h3>
+                <p>⛅ Cloudy</p>
+                <p>23°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 28</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 29</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 30</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+            <div class="day">
+                <h3>March 31</h3>
+                <p>🌞 Sunny</p>
+                <p>27°C / 15°C</p>
+            </div>
+    </main>        
+
+        
+</body>
+</html>
+

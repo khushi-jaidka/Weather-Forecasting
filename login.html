@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 90%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 15px 30px rgba(0, 0, 100, 0.3);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0a4b94;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 0.5s ease forwards;
+}
+
+.input-group input:focus ~ label {
+    color: #1e55c8;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #a4c1e6;
+    border-radius: 8px;
+    background-color: #f0f7ff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0d5bbb;
+}
+
+.error {
+    border-color: #d32f2f;
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25%, 75% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <form id="loginForm">
+            <h2>Login <i class="fa-solid fa-cloud-moon-rain"></i> </h2>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="button-group">
+                <button id="submit-btn" type="submit">Login</button>
+            </div> 
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById("loginForm");
+            const username = document.getElementById("username");
+            const password = document.getElementById("password");
+            const submit_btn = document.getElementById("submit-btn");
+
+            // Focus effects
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.previousElementSibling.style.color = '#1e55c8';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.previousElementSibling.style.color = '#2c5282';
+                });
+            });
+
+            // Login validation
+            function validateLogin(event) {
+                event.preventDefault();
+                username.classList.remove('error', 'success');
+                password.classList.remove('error', 'success');
+                
+                if (username.value.trim() === "") {
+                    username.classList.add('error');
+                    return;
+                }
+                submit_btn.classList.add('loading');
+                
+                setTimeout(() => {
+                    submit_btn.classList.remove('loading');
+                    
+                    if (password.value === "password123") {
+                        username.classList.add('success');
+                        password.classList.add('success');
+                        document.querySelector('.login-container').style.animation = 'success 0.5s ease';
+                        loginForm.innerHTML = `
+                            <div style="text-align: center; animation: fadeIn 0.5s ease;">
+                                <i class="fa-solid fa-circle-check" style="font-size: 60px; color: #0d904f; margin-bottom: 20px;"></i>
+                                <h2 style="margin-bottom: 15px;">Login Successful</h2>
+                                <p style="color: #2c5282; margin-bottom: 25px;">Redirecting to dashboard...</p>
+                                <div class="progress-bar" style="height: 4px; background: #e0e0e0; border-radius: 2px; overflow: hidden; margin: 0 auto; width: 80%;">
+                                    <div class="progress" style="height: 100%; width: 0%; background: #1a73e8; transition: width 2s linear;"></div>
+                                </div>
+                            </div>`;
+                        setTimeout(() => {
+                            document.querySelector('.progress').style.width = '100%';
+                        }, 100);
+                        setTimeout(() => {
+                            window.location.href = '/today.html';
+                        }, 2000);
+                    } else {
+                        password.classList.add('error');
+                        alert("Invalid username or password");
+                    }
+                }, 1000);
+            }
+            
+            submit_btn.addEventListener("click", validateLogin);
+        });
+    </script>
+</body>
+</html>

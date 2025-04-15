@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-Day Weather Forecast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e5eaf0;
+            color: #333;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+
+        .header {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #1c5f34;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #14532d;
+        }
+
+        .forecast-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .day {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .day:hover {
+            transform: translateY(-5px);
+            background-color: #f0f4f1;
+        }
+
+        .icon img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .details {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: 1.8em;
+            color: #2e8b57;
+        }
+
+        .extra-details {
+            color: #777;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        .extra-details p {
+            margin: 5px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .day {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        footer a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #2e8b57;
+            font-size: 1.1em;
+        }
+
+        footer a:hover {
+            color: #1c5f34;
+        }
+
+        footer hr {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>10-Day Weather Forecast</h1>
+        <p>Location: Rajpura, Punjab, India</p>
+        <button><a href="today.html">BACK</a></button>
+    </div>
+
+    <div class="forecast-container">
+        <!-- Day 1 (Thursday) -->
+        <div class="day">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" alt="Clear Night">
+            </div>
+            <div class="details">
+                <h4>Thursday</h4>
+                <p>Clear skies. Hazy. Low 11°C. Winds light and variable.</p>
+            </div>
+            <div class="extra-details">
+                <p>Humidity: 83%</p>
+                <p>UV Index: 0 of 11</p>
+                <p>Moonrise: 22:42</p>
+                <p>Moonset: 12:05</p>
+            </div>
+        </div>
+
+        <!-- Day 2 (Friday) -->
+        <div class="day">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sunny">
+            </div>
+            <div class="details">
+                <h4>Friday</h4>
+                <p>Sunny. High 24°C / Low 12°C. Winds N 6 km/h.</p>
+            </div>
+            <div class="extra-details">
+                <p>Rain: 7%</p>
+                <p>Humidity: 70%</p>
+            </div>
+        </div>
+
+        <!-- Day 3 (Saturday) -->
+        <div class="day">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="Partly Cloudy">
+            </div>
+            <div class="details">
+                <h4>Saturday</h4>
+                <p>Partly cloudy. High 24°C / Low 12°C.</p>
+            </div>
+            <div class="extra-details">
+                <p>Rain: 5%</p>
+                <p>Humidity: 65%</p>
+            </div>
+        </div>
+
+        <!-- Day 4 (Sunday) -->
+        <div class="day">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sunny">
+            </div>
+            <div class="details">
+                <h4>Sunday</h4>
+                <p>Sunny. High 25°C / Low 12°C. Winds N 7 km/h.</p>
+            </div>
+            <div class="extra-details">
+                <p>Rain: 5%</p>
+                <p>Humidity: 60%</p>
+            </div>
+        </div>
+
+        <!-- Day 5 (Monday) -->
+        <div class="day">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" alt="Clear Night">
+            </div>
+            <div class="details">
+                <h4>Monday</h4>
+                <p>Clear Skies. Hazy 22°C / Low 12°C.</p>
+            </div>
+            <div class="extra-details">
+                <p>Humidity: 85%</p>
+                <p>UV Index: 0 of 12</p>
+                <p>Moonrise: 22:38</p>
+                <p>Moonset: 12:00</p>
+            </div>
+        </div>
+
+        <!-- Day 6 (Tuesday) -->
+        <div class="day">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sunny">
+            </div>
+            <div class="details">
+                <h4>Tuesday</h4>
+                <p>Sunny. High 24°C / Low 19°C.</p>
+            </div>
+            <div class="extra-details">
+                <p>Rain: 5%</p>
+                <p>Humidity: 65%</p>
+            </div>
+        </div>
+
+        <!-- Day 7 (Wednesday) -->
+        <div class="day">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="Partly Cloudy">
+            </div>
+            <div class="details">
+                <h4>Wednesday</h4>
+                <p>Partly cloudy. High 24°C / Low 12°C.</p>
+            </div>
+            <div class="extra-details">
+                <p>Rain: 5%</p>
+                <p>Humidity: 65%</p>
+            </div>
+        </div>
+
+        <!-- Day 8 (Thursday) -->
+        <div class="day">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sunny">
+            </div>
+            <div class="details">
+                <h4>Thursday</h4>
+                <p>Sunny. High 24°C / Low 18°C.</p>
+            </div>
+            <div class="extra-details">
+                <p>Rain: 5%</p>
+                <p>Humidity: 65%</p>
+            </div>
+        </div>
+
+        <!-- Day 9 (Friday) -->
+        <div class="day">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="Partly Cloudy">
+            </div>
+            <div class="details">
+                <h4>Friday</h4>
+                <p>Partly cloudy. High 24°C / Low 12°C.</p>
+            </div>
+            <div class="extra-details">
+                <p>Rain: 5%</p>
+                <p>Humidity: 65%</p>
+            </div>
+        </div>
+
+        <!-- Day 10 (Saturday) -->
+        <div class="day">
+            <div class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sunny">
+            </div>
+            <div class="details">
+                <h4>Saturday</h4>
+                <p>Sunny. High 26°C / Low 14°C.</p>
+            </div>
+            <div class="extra-details">
+                <p>Rain: 5%</p>
+                <p>Humidity: 60%</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div>
+            <p><strong>Connect with us</strong></p>
+            <a href="https://www.facebook.com/?_rdr" style="margin: 0 10px;">Facebook</a>
+            <a href="https://x.com/?lang=en" style="margin: 0 10px;">Twitter</a>
+            <a href="https://www.instagram.com/" style="margin: 0 10px;">Instagram</a>
+            <a href="https://www.youtube.com/" style="margin: 0 10px;">YouTube</a>
+        </div>
+        <hr>
+        <div>
+            <a href="#" style="margin: 0 10px;">Feedback</a>
+            <a href="#" style="margin: 0 10px;">Weather API</a>
+            <a href="#" style="margin: 0 10px;">News Room</a>
+        </div>
+        <div style="margin-top: 15px;">
+            <a href="#" style="margin: 0 10px;">Terms of Use</a>
+            <a href="#" style="margin: 0 10px;">Privacy Policy</a>
+            <a href="#" style="margin: 0 10px;">Accessibility Statement</a>
+            <a href="#" style="margin: 0 10px;">Data Vendors</a>
+        </div>
+    </footer>
+</body>
+</html>
