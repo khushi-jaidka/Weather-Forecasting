@@ -46,8 +46,7 @@
                 
                 // Input blur effect
                 input.addEventListener('blur', function() {
-                    this.parentElement.querySelector('label').style.color = '#2c5282';
-                    validateInput(this);
+                    this.parentElement.querySelector('label').style.color = '# validateInput(this);
                 });
                 
                 // Real-time validation for all fields
@@ -151,7 +150,7 @@
                     input.style.animation = 'shake 0.5s ease';
                 }, 10);
             }
-            
+             
             // Add shake animation to CSS
             const style = document.createElement('style');
             style.textContent = `
