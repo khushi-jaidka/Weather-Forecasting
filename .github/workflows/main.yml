@@ -1,0 +1,45 @@
+project:
+name: Weather Forecasting Site Frontend
+technologies:
+    - HTML
+    - CSS
+
+structure:
+  src:
+    -index.html
+    -today.html
+    -hourly.html
+    -10day.html
+    -monthly.html
+    -login.html
+    -signup.html
+    -style.css
+    -style1.css
+    -style2.css
+    -style3.css
+    -style4.css
+    -style5.css
+    -style6.css
+    -script.js
+    -script1.js
+
+features:
+  - Responsive multi-page layout using CSS Flexbox and Grid
+  - CSS-only tabbed interface for viewing daily/weekly forecasts
+  - Thematic backgrounds for different weather conditions (sunny, rainy, snowy)
+  - CSS animations for weather icons (e.g., clouds moving, sun glowing)
+  - Mobile-first design with media queries
+  - Clean, semantic HTML structure
+  - Contact form styled with CSS (non-functional)
+
+scripts:
+  start: "Open index.html in browser"
+
+environment:
+  browser_support: "Latest Chrome, Firefox, Edge, Safari"
+
+description: >
+  This is a frontend project for a Weather Forecasting Website built using only HTML and CSS.
+  It features a clean, responsive layout with separate pages for forecasts, about, and contact sections.
+  The site visually represents different weather conditions through themed backgrounds and icon animations,
+  offering a smooth user experience without any JavaScript.
